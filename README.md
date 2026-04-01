@@ -10,6 +10,8 @@ This repository contains a **forensic evaluation system** designed to analyze la
 * cross-model behavioral inconsistencies
 * compositional and multi-turn vulnerabilities
 
+Full write-up: https://docs.google.com/document/d/1oTWnuosqjq4za4ElVNptHMUGd3xyavnE/edit?usp=sharing&ouid=104076538454598932450&rtpof=true&sd=true
+
 ---
 
 # Overview
