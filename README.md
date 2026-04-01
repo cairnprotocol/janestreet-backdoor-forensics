@@ -9,8 +9,6 @@ This repository contains a **forensic evaluation system** designed to analyze la
 * computation–decision divergence
 * cross-model behavioral inconsistencies
 * compositional and multi-turn vulnerabilities
-  
-We identify a pathway-specific failure: numerical reasoning is non-invariant to surface form perturbations, while decision-level outputs remain partially invariant under the same transformations.
 
 ---
 
@@ -20,28 +18,27 @@ This project investigates a central question:
 
 > Are model outputs invariant to semantically equivalent inputs?
 
-We identify and analyze **pathway-specific failures**, where:
-
-* numerical reasoning is **non-invariant to surface form**
-* decision outputs can **diverge from correct computation**
+We identify a pathway-specific failure: numerical reasoning is non-invariant to surface form perturbations, while decision-level outputs remain partially invariant under the same transformations.
 
 ---
 # Key Findings
 
 1. **Surface-form sensitivity**
-   Small syntactic changes (punctuation, delimiters, encoding) produce measurable shifts in early-layer activations and downstream numeric reasoning.
+   Small syntactic changes (e.g., punctuation, delimiter wrapping, encoding) produce measurable shifts in early-layer activations and downstream numeric reasoning.
 
 2. **Computation–decision dissociation**
-   Models can compute expected value incorrectly while maintaining consistent decision direction.
+   Models can compute expected value incorrectly while maintaining consistent decision direction across equivalent formulations.
 
 3. **Format-dependent failure modes**
-   JSON formatting induces systematic failure, while XML remains stable across models.
+   JSON formatting induces systematic failure (malformed or non-strict outputs), while XML remains stable across models.
 
 4. **Cross-model consistency**
-   These patterns replicate across multiple dormant models, suggesting structural rather than stochastic effects.
+   These patterns replicate across multiple dormant models under aligned conditions, suggesting structural rather than stochastic effects.
 
 5. **No single-token trigger identified**
-   Evidence suggests compound or pathway-based triggers rather than discrete backdoor strings.
+   Evidence suggests compound or pathway-based triggers rather than discrete backdoor strings, based on systematic negative results across trigger sweeps.
+
+These findings were derived from controlled perturbation experiments, not post-hoc interpretation.
 
 ---
 
@@ -72,12 +69,12 @@ Targeted Diagnostics
 The investigation evolved in stages:
 
 1. Initial probing focused on single-turn formatting perturbations.
-2. Observed invariance led to introduction of compositional and multi-turn probes.
+2. Early experiments did not reveal clear anomalies under simple perturbations, motivating expansion into compositional and multi-turn probes.
 3. Anomalies were clustered and rerun using trigger ladders.
 4. Cross-model comparisons confirmed consistency of failure patterns.
 5. Targeted diagnostics were developed for Model 3 after anomalous behavior.
 
-This iterative structure reflects hypothesis-driven refinement rather than a predefined pipeline.
+The pipeline was not predefined; it was constructed in response to observed failures.
 
 ---
 
@@ -236,7 +233,7 @@ Instead, failures appear structured and pathway-dependent.
 
 This work demonstrates:
 
-> A modular forensic framework for detecting invariant violations, structural failures, and cross-model divergences in LLM behavior.
+> This work demonstrates that LLM failures can be systematically elicited and analyzed through controlled perturbations, revealing structured, pathway-dependent behavior rather than purely stochastic variation.
 
 ---
 
