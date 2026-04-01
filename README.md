@@ -1,5 +1,5 @@
 # LLM Forensic Evaluation Framework (Jane Street Investigation)
-This repository contains my approach to identifying backdoor triggers trained into 3 different language models. Includes evaluation scripts detailing the exploration, detection methodology, and final analysis.
+This repository contains my approach to forensic evaluation of latent failure modes in 3 different language models. Includes evaluation scripts detailing the exploration, detection methodology, and final analysis.
 
 # LLM Forensic Evaluation Framework
 
