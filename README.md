@@ -1,7 +1,5 @@
 # LLM Forensic Evaluation Framework (Jane Street Investigation)
 
-# LLM Forensic Evaluation Framework
-
 ### Detecting Invariant Violations and Decision–Computation Dissociation
 
 This repository contains a **forensic evaluation system** designed to analyze latent failure modes in large language models, including:
